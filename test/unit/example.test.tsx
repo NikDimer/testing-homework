@@ -12,7 +12,6 @@ import { Provider } from 'react-redux';
 import { Application } from '../../src/client/Application';
 import { ExampleApi, CartApi } from '../../src/client/api';
 import { initStore } from '../../src/client/store';
-import { TestCatalogApplication } from './TestCatalogApplication';
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -83,30 +82,5 @@ describe('Общие требования', () => {
 
         expect(homeLink.getAttribute('href') === '/hw/store/');
     });
-
-describe('Тестирование каталога', () => {
-    it('В каталоге должны отображаться товары, список которых приходит с сервера', () => {
-        const basename = '/hw/store';
-
-        const api = new ExampleApi(basename);
-        const cart = new CartApi();
-        const store = initStore(api, cart);
-
-        let application = (
-            <BrowserRouter basename={basename}>
-                <Provider store={store}>
-                    <TestCatalogApplication />
-                </Provider>
-            </BrowserRouter>
-        );
-        
-        const {container, getByTestId, getAllByTestId} = render(application);
-
-        console.log(container.outerHTML);
-
-
-        screen.logTestingPlaygroundURL(container);
-    });
-});
 
 });

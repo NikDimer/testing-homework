@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "start": "nodemon ./src/server/index.ts",
-        "test": "jest --env=./custom-test-env.js",
+        "test": "concurrently \" set BUG_ID=0 \" \" jest --env=./custom-test-env.js \"",
         "build": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch",
         "start-with-test": "concurrently \" nodemon ./src/server/index.ts \" \" npx hermione ./test/hermione/example.hermione.js \"",
