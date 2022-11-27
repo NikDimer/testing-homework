@@ -50,6 +50,6 @@ export class ExampleStore {
     }
 
     getLatestOrders() {
-        return this.orders.slice(-SIZE);
+        return this.orders;
     }
 }

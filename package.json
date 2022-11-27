@@ -3,7 +3,11 @@
     "version": "1.0.0",
     "scripts": {
         "start": "nodemon ./src/server/index.ts",
+<<<<<<< Updated upstream
         "test": "jest",
+=======
+        "test": "concurrently \" set BUG_ID=10 \" \" jest --env=./custom-test-env.js \"",
+>>>>>>> Stashed changes
         "build": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch"
     },
