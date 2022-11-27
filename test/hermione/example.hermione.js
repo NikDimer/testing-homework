@@ -1,19 +1,7 @@
 const { assert } = require('chai');
-<<<<<<< Updated upstream
-
-describe('github', async function() {
-    it('Тест, который пройдет', async function() {
-        await this.browser.url('https://github.com/gemini-testing/hermione');
-        await this.browser.assertView('plain', '#readme', {
-            compositeImage: true,
-        });
-
-        const title = await this.browser.$('#readme h1').getText();
-        assert.equal(title, 'Hermione');
-=======
 
 let bug = '?bug_id=0';
-// Для генерации бага достаточно поменять цыфру в строке выше на номер бага
+// Для генерации бага достаточно поменять число в строке выше на номер бага
 
 describe('Тестирование существования страниц', async function() {
 
@@ -558,6 +546,5 @@ describe('Тестирование корзины', async function() {
         await browser.assertView('plain', "html", {
             compositeImage: true,
         });
->>>>>>> Stashed changes
     });
 });
